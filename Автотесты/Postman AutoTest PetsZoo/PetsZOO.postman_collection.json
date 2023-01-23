@@ -1,0 +1,596 @@
+{
+	"info": {
+		"_postman_id": "2902e490-7e47-451c-ac8d-5e4868fff6df",
+		"name": "PetsZOO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GreatePetsZoo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body has string 'id': 747\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"747\");",
+							"});",
+							"pm.test(\"Body has string category 'id': 56\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"56\");",
+							"});",
+							"pm.test(\"Body has string name pets 'AnfiskaYlianka'\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"AnfiskaYlianka\");",
+							"});",
+							"pm.test(\"Body has string status:'YAPRA'\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"YAPRA\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": 747,\n  \"category\": {\n    \"id\": 56,\n    \"name\": \"string\"\n  },\n  \"name\": \"AnfiskaYlianka\",\n  \"photoUrls\": [\n    \"string\"\n  ],\n  \"tags\": [\n    {\n      \"id\": 0,\n      \"name\": \"string\"\n    }\n  ],\n  \"status\": \"YAPRA\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/pet",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"pet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FindPetsID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body has string 'id': 747\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"747\");",
+							"});",
+							"pm.test(\"Body has string category 'id': 56\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"56\");",
+							"});",
+							"pm.test(\"Body has string name pets 'AnfiskaYlianka'\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"AnfiskaYlianka\");",
+							"});",
+							"pm.test(\"Body has string status:'YAPRA'\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"YAPRA\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/pet/747",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"pet",
+						"747"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PetsZOO Inventory",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body has string status:'YAPRA'\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"YAPRA\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/store/inventory/",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"store",
+						"inventory",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GreatZOOorder",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body has string number order 'id': \", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"id\");",
+							"});",
+							"pm.test(\"Body has string category 'petId'\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"petId\");",
+							"});",
+							"pm.test(\"Body has string 'quantity'\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"quantity\");",
+							"});",
+							"pm.test(\"Body has string 'shipDate'\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"shipDate\");",
+							"});",
+							"pm.test(\"Body has string status 'placed'\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"placed\");",
+							"});",
+							"pm.test(\"Body has string complete 'true'\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"true\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": 66,\n  \"petId\": 747,\n  \"quantity\": 1,\n  \"shipDate\": \"2022-04-21T15:51:55.985Z\",\n  \"status\": \"placed\",\n  \"complete\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/store/order",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"store",
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FindZOOorder",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body has string number order 'id': \", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"id\");",
+							"});",
+							"pm.test(\"Body has string category 'petId'\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"petId\");",
+							"});",
+							"pm.test(\"Body has string 'quantity'\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"quantity\");",
+							"});",
+							"pm.test(\"Body has string 'shipDate'\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"shipDate\");",
+							"});",
+							"pm.test(\"Body has string status 'placed'\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"placed\");",
+							"});",
+							"pm.test(\"Body has string complete 'true'\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"true\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/store/order/66",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"store",
+						"order",
+						"66"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PetsSOLD",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body has string status:'YAPRAsold'\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"YAPRAsold\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": 747,\n  \"category\": {\n    \"id\": 56,\n    \"name\": \"string\"\n  },\n  \"name\": \"AnfiskaYlianka\",\n  \"photoUrls\": [\n    \"string\"\n  ],\n  \"tags\": [\n    {\n      \"id\": 0,\n      \"name\": \"string\"\n    }\n  ],\n  \"status\": \"YAPRAsold\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/pet",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"pet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FindPetsID Copy 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body has string 'id': 747\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"747\");",
+							"});",
+							"pm.test(\"Body has string category 'id': 56\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"56\");",
+							"});",
+							"pm.test(\"Body has string name pets 'AnfiskaYlianka'\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"AnfiskaYlianka\");",
+							"});",
+							"pm.test(\"Body has string status:'YAPRAsold'\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"YAPRAsold\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/pet/747",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"pet",
+						"747"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PetsZOO Inventory Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body has string status:'YAPRAsold'\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"YAPRAsold\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/store/inventory/",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"store",
+						"inventory",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete ZOO Order",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body has string 'code': 200\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"200\");",
+							"});",
+							"pm.test(\"Body has string type 'unknown'\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"unknown\");",
+							"});",
+							"pm.test(\"Body has string message : 'number order'\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"message\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/store/order/66",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"store",
+						"order",
+						"66"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FindZOODeleteOrder",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404 Not found\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});",
+							"pm.test(\"Body has string 'code': 1\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"1\");",
+							"});",
+							"pm.test(\"Body has string type: 'error'\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"error\");",
+							"});",
+							"pm.test(\"Body has string message : 'Order not found'\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Order not found\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/store/order/66",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"store",
+						"order",
+						"66"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete CreatePets",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body has string 'code': 200\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"200\");",
+							"});",
+							"pm.test(\"Body has string type : 'unknown'\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"unknown\");",
+							"});",
+							"pm.test(\"Body has string message : 'number pets'\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"message\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/pet/747",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"pet",
+						"747"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FindPetsID Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});",
+							"pm.test(\"Body has string 'Pet not found'\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Pet not found\");",
+							"});",
+							"pm.test(\"Body has string 'code': 1\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"1\");",
+							"});",
+							"pm.test(\"Body has string type : 'error'\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"error\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/pet/747",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"pet",
+						"747"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.environment.get(\"server_url\");"
+				]
+			}
+		}
+	]
+}
